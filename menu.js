@@ -23,16 +23,16 @@ const MENU = [
     description: "East African and Yemeni single-origins, roasted weekly in Karen.",
     items: [
       { name: "Espresso",          desc: "A single, slow extraction.",                              price: "250", tag: "",    img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" },
-      { name: "Macchiato",         desc: "Espresso with a hush of foamed milk.",                    price: "300", tag: "",    img: "https://images.unsplash.com/photo-1516224498413-84ecf3a1e7fd?auto=format&fit=crop&w=300&q=80" },
+      { name: "Macchiato",         desc: "Espresso with a hush of foamed milk.",                    price: "300", tag: "",    img: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=300&q=80" },
       { name: "Cortado",           desc: "Equal parts espresso and warm milk.",                     price: "380", tag: "",    img: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=300&q=80" },
       { name: "Flat White",        desc: "Velvet microfoam over a double shot.",                    price: "420", tag: "",    img: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=300&q=80" },
       { name: "Cappuccino",        desc: "Tradition. Soft foam, fine cocoa.",                       price: "450", tag: "",    img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=300&q=80" },
       { name: "Cafe Latte",        desc: "Long, creamy, gentle.",                                   price: "480", tag: "",    img: "https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=300&q=80" },
       { name: "Mocha",             desc: "House dark chocolate, espresso, steamed milk.",           price: "520", tag: "",    img: "https://images.unsplash.com/photo-1542990253-a781e04c0082?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pour Over",         desc: "Today's single-origin, brewed by hand. Ask our barista.", price: "550", tag: "",    img: "https://images.unsplash.com/photo-1521302200778-33500795e128?auto=format&fit=crop&w=300&q=80" },
+      { name: "Pour Over",         desc: "Today's single-origin, brewed by hand. Ask our barista.", price: "550", tag: "",    img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" },
       { name: "Cold Brew",         desc: "Steeped 18 hours. Smooth, rounded, bright.",              price: "500", tag: "",    img: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" },
-      { name: "Iced Latte",        desc: "Double shot over ice and cold milk.",                     price: "520", tag: "",    img: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=300&q=80" },
-      { name: "Arabic Coffee",     desc: "Lightly roasted, cardamom, served with dates.",           price: "450", tag: "new", img: "https://images.unsplash.com/photo-1606791422814-b32c705fa101?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Latte",        desc: "Double shot over ice and cold milk.",                     price: "520", tag: "",    img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=300&q=80" },
+      { name: "Arabic Coffee",     desc: "Lightly roasted, cardamom, served with dates.",           price: "450", tag: "new", img: "https://images.unsplash.com/photo-1559525839-d9acfd02c9e0?auto=format&fit=crop&w=300&q=80" },
       { name: "Turkish Coffee",    desc: "Stone-ground, simmered slowly in a copper cezve.",        price: "450", tag: "",    img: "https://images.unsplash.com/photo-1518057111178-44a106bad636?auto=format&fit=crop&w=300&q=80" }
     ]
   },
@@ -42,11 +42,11 @@ const MENU = [
     title: "Beyond the Bar",
     description: "Loose-leaf teas, signature drinks, and the occasional discovery.",
     items: [
-      { name: "Karak Chai",         desc: "Black tea, evaporated milk, cardamom, saffron.",         price: "380", tag: "",    img: "https://images.unsplash.com/photo-1597318236591-31f7942c89e8?auto=format&fit=crop&w=300&q=80" },
-      { name: "Moroccan Mint Tea",  desc: "Gunpowder green, fresh spearmint, light honey.",         price: "350", tag: "",    img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=300&q=80" },
+      { name: "Karak Chai",         desc: "Black tea, evaporated milk, cardamom, saffron.",         price: "380", tag: "",    img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=300&q=80" },
+      { name: "Moroccan Mint Tea",  desc: "Gunpowder green, fresh spearmint, light honey.",         price: "350", tag: "",    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=300&q=80" },
       { name: "Rose Latte",         desc: "Steamed milk, rose, pistachio dust.",                    price: "520", tag: "new", img: "https://images.unsplash.com/photo-1558122104-355edad709f6?auto=format&fit=crop&w=300&q=80" },
-      { name: "Saffron Latte",      desc: "Persian saffron, honey, vanilla bean.",                  price: "580", tag: "",    img: "https://images.unsplash.com/photo-1592318951566-5c7e2bf80b73?auto=format&fit=crop&w=300&q=80" },
-      { name: "Matcha Latte",       desc: "Ceremonial-grade matcha, oat or whole milk.",            price: "550", tag: "veg", img: "https://images.unsplash.com/photo-1536013455671-3a17e4ee23a7?auto=format&fit=crop&w=300&q=80" },
+      { name: "Saffron Latte",      desc: "Persian saffron, honey, vanilla bean.",                  price: "580", tag: "",    img: "https://images.unsplash.com/photo-1572286258217-215cf8e9d99f?auto=format&fit=crop&w=300&q=80" },
+      { name: "Matcha Latte",       desc: "Ceremonial-grade matcha, oat or whole milk.",            price: "550", tag: "veg", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=300&q=80" },
       { name: "Spiced Hot Chocolate", desc: "70% dark, cinnamon, cardamom, sea salt.",              price: "500", tag: "",    img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=300&q=80" },
       { name: "Hibiscus Cooler",    desc: "Hibiscus, lime, mint, sparkling water.",                 price: "420", tag: "veg", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=300&q=80" },
       { name: "Mango Lassi",        desc: "Yogurt, alphonso mango, cardamom.",                      price: "450", tag: "",    img: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" },
@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
 
       const imgHtml = item.img
-        ? `<div class="menu-item-img"><img src="${item.img}" alt="${item.name}" loading="lazy" /></div>`
-        : "";
+        ? `<div class="menu-item-img"><img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
+        : `<div class="menu-item-img img-fallback" data-letter="${item.name.charAt(0)}"></div>`;
 
       el.innerHTML = `
         ${imgHtml}

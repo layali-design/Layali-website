@@ -781,6 +781,27 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   pointer-events: none;
 }
 
+/* Graceful fallback if image fails to load */
+.menu-item-img.img-fallback {
+  background:
+    radial-gradient(ellipse at 30% 30%, var(--bronze) 0%, transparent 60%),
+    linear-gradient(135deg, var(--bronze) 0%, var(--brown) 100%);
+}
+.menu-item-img.img-fallback::before {
+  content: attr(data-letter);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--cream);
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
 .menu-item-info {
   flex: 1;
   min-width: 0;

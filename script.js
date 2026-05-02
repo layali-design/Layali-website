@@ -41,7 +41,7 @@ function handleReservation(e) {
 
   // Simulate request (replace with real endpoint, e.g. Formspree, Netlify Forms)
   setTimeout(() => {
-    btn.textContent = "Thank you — we'll be in touch";
+    btn.textContent = "Thank you, we'll be in touch";
     setTimeout(() => {
       form.reset();
       btn.textContent = original;

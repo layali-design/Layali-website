@@ -1,11 +1,11 @@
-# Layali Cafe — Website
+# NOVA CAFE — Website
 
 A premium halal cafe website in Nairobi.
 
 ## File Structure
 
 ```
-layali/
+nova-cafe/
 ├── index.html      ← Main site structure (rarely edit)
 ├── styles.css      ← All styling: colours, fonts, layout
 ├── menu.js         ← THE MENU — edit this often
@@ -77,7 +77,7 @@ Change the hex codes and the whole site updates.
 
 ### Connecting your custom domain
 
-Once you buy a domain (e.g. `layali.cafe`):
+Once you buy a domain (e.g. `novacafe.com`):
 
 1. In **Settings → Pages**, enter your domain in the **Custom domain** field and save.
 2. At your domain registrar, add these DNS records pointing to GitHub Pages:

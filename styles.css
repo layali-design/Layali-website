@@ -103,27 +103,21 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-display);
+  gap: 0.5rem;
 }
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--bronze), var(--brown));
-  color: var(--cream);
-  display: grid;
-  place-items: center;
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 500;
-  box-shadow: 0 4px 16px rgba(138, 94, 40, 0.25);
+.brand-logo {
+  height: 42px;
+  width: auto;
+  mix-blend-mode: multiply;
+  display: block;
 }
 .brand-name {
-  font-size: 1.6rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--brown-deep);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #1a1a1a;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -547,8 +541,8 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(60, 38, 19, 0.15), rgba(60, 38, 19, 0.4)),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80');
+    linear-gradient(180deg, rgba(60, 38, 19, 0.05), rgba(60, 38, 19, 0.2)),
+    url('images/nova-exterior.jpeg');
   background-size: cover;
   background-position: center;
   transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -991,9 +985,10 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-position: center;
   transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-/* Cafe interior — wide, warm, people */
+/* Nova Cafe exterior — actual photo */
 .g1 .g-img {
-  background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80');
+  background-image: url('images/nova-exterior.jpeg');
+  background-position: center top;
 }
 /* Coffee being poured / latte art */
 .g2 .g-img {
@@ -1003,18 +998,17 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .g3 .g-img {
   background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80');
 }
-/* Outdoor / courtyard seating */
+/* Coffee farm Ethiopia */
 .g4 .g-img {
-  background-image: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1200&q=80');
+  background-image: url('images/coffe farm ethiopia.jpg');
 }
-/* Coffee beans / roastery */
+/* Coffee with heart */
 .g5 .g-img {
-  background-image: url('https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?auto=format&fit=crop&w=900&q=80');
+  background-image: url('images/coffee with heart.jpg');
 }
-/* Nova Cafe exterior — actual photo */
+/* Coffee bar */
 .g6 .g-img {
-  background-image: url('images/nova-exterior.jpeg');
-  background-position: center top;
+  background-image: url('images/coffee bar.jpg');
 }
 
 .g-img::after {

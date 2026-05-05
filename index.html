@@ -284,33 +284,34 @@
       </div>
 
       <div class="visit-form-wrap">
-        <form class="visit-form" onsubmit="handleReservation(event)">
+        <form class="visit-form" action="https://formspree.io/f/mkoyryyz" method="POST">
+          <input type="hidden" name="_subject" value="New Reservation — NOVA CAFE" />
           <h3>Reserve a Table</h3>
           <p class="form-sub">For parties up to 8. For larger events, just email us directly.</p>
 
           <div class="form-row">
             <label>
               <span>Name</span>
-              <input type="text" required placeholder="Your full name" />
+              <input type="text" name="name" required placeholder="Your full name" />
             </label>
             <label>
               <span>Phone</span>
-              <input type="tel" required placeholder="+254 ..." />
+              <input type="tel" name="phone" required placeholder="+254 ..." />
             </label>
           </div>
 
           <div class="form-row">
             <label>
               <span>Date</span>
-              <input type="date" required />
+              <input type="date" name="date" required />
             </label>
             <label>
               <span>Time</span>
-              <input type="time" required />
+              <input type="time" name="time" required />
             </label>
             <label>
               <span>Guests</span>
-              <select required>
+              <select name="guests" required>
                 <option value="">Select</option>
                 <option>1</option><option>2</option><option>3</option><option>4</option>
                 <option>5</option><option>6</option><option>7</option><option>8</option>
@@ -320,7 +321,7 @@
 
           <label class="full">
             <span>Notes (optional)</span>
-            <textarea rows="3" placeholder="Anniversary, dietary needs, seating preference, anything else..."></textarea>
+            <textarea name="notes" rows="3" placeholder="Anniversary, dietary needs, seating preference, anything else..."></textarea>
           </label>
 
           <button type="submit" class="btn btn-primary btn-full">Request Reservation</button>

@@ -1,5 +1,5 @@
 /* ============================================================
-   LAYALI — Site interactions
+   NOVA CAFE — Site interactions
    ============================================================ */
 
 // Sticky nav shadow on scroll
@@ -30,6 +30,16 @@ mobileMenu.querySelectorAll("a").forEach(link => {
   });
 });
 
+// Close mobile menu on outside click
+document.addEventListener("click", (e) => {
+  if (mobileMenu.classList.contains("open") && !nav.contains(e.target)) {
+    burger.classList.remove("open");
+    mobileMenu.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  }
+});
+
 // Reservation form (placeholder handler — connect to email service later)
 function handleReservation(e) {
   e.preventDefault();
@@ -58,7 +68,17 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-document.querySelectorAll(".story-text, .story-image, .menu-header, .gallery-header, .visit-info, .visit-form-wrap, .feature-text, .feature-visual")
-  .forEach(el => observer.observe(el));
+// Section-level elements
+document.querySelectorAll(
+  ".story-text, .story-image, .menu-header, .gallery-header, " +
+  ".visit-info, .visit-form-wrap, .feature-text, .feature-visual, " +
+  ".story-pillars, .visit-map, .footer-brand, .footer-cols"
+).forEach(el => observer.observe(el));
+
+// Gallery cells — stagger via inline delay assigned once
+document.querySelectorAll(".g").forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.07}s`;
+  observer.observe(el);
+});

@@ -1,5 +1,5 @@
 /* ============================================================
-   LAYALI MENU DATA
+   NOVA CAFE MENU DATA
    ============================================================
    HOW TO EDIT:
 
@@ -25,7 +25,7 @@ const MENU = [
       { name: "Espresso",          desc: "A single, slow extraction.",                              price: "250", tag: "",    img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" },
       { name: "Macchiato",         desc: "Espresso with a hush of foamed milk.",                    price: "300", tag: "",    img: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=300&q=80" },
       { name: "Cortado",           desc: "Equal parts espresso and warm milk.",                     price: "380", tag: "",    img: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=300&q=80" },
-      { name: "Flat White",        desc: "Velvet microfoam over a double shot.",                    price: "420", tag: "",    img: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=300&q=80" },
+      { name: "Flat White",        desc: "Velvet microfoam over a double shot.",                    price: "420", tag: "", popular: true, img: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=300&q=80" },
       { name: "Cappuccino",        desc: "Tradition. Soft foam, fine cocoa.",                       price: "450", tag: "",    img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=300&q=80" },
       { name: "Cafe Latte",        desc: "Long, creamy, gentle.",                                   price: "480", tag: "",    img: "https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=300&q=80" },
       { name: "Mocha",             desc: "House dark chocolate, espresso, steamed milk.",           price: "520", tag: "",    img: "https://images.unsplash.com/photo-1542990253-a781e04c0082?auto=format&fit=crop&w=300&q=80" },
@@ -60,7 +60,7 @@ const MENU = [
     title: "All Morning",
     description: "Served until 1pm. Eggs from a small farm in Limuru.",
     items: [
-      { name: "Avocado on Sourdough", desc: "Smashed avocado, chilli oil, dukkah, lime, soft egg.", price: "950",  tag: "veg", img: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?auto=format&fit=crop&w=300&q=80" },
+      { name: "Avocado on Sourdough", desc: "Smashed avocado, chilli oil, dukkah, lime, soft egg.", price: "950",  tag: "veg", popular: true, img: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?auto=format&fit=crop&w=300&q=80" },
       { name: "Shakshuka",            desc: "Eggs poached in spiced tomato, feta, herbs, flatbread.", price: "1,150", tag: "",   img: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=300&q=80" },
       { name: "Eggs Royale",          desc: "Smoked salmon, poached eggs, hollandaise, English muffin.", price: "1,450", tag: "", img: "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=300&q=80" },
       { name: "Halloumi Plate",       desc: "Grilled halloumi, tomato, olives, za'atar, sourdough.", price: "1,250", tag: "veg", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=300&q=80" },
@@ -161,17 +161,23 @@ document.addEventListener("DOMContentLoaded", () => {
           }</span>`
         : "";
 
+      const popularHtml = item.popular
+        ? `<span class="menu-item-popular">★ Popular</span>`
+        : "";
+
       const imgHtml = item.img
-        ? `<div class="menu-item-img"><img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
-        : `<div class="menu-item-img img-fallback" data-letter="${item.name.charAt(0)}"></div>`;
+        ? `<div class="menu-item-img">${popularHtml}<img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
+        : `<div class="menu-item-img img-fallback" data-letter="${item.name.charAt(0)}">${popularHtml}</div>`;
 
       el.innerHTML = `
         ${imgHtml}
-        <div class="menu-item-info">
+        <div class="menu-item-body">
           <div class="menu-item-name">${item.name} ${tagHtml}</div>
-          <div class="menu-item-desc">${item.desc}</div>
+          <p class="menu-item-desc">${item.desc}</p>
+          <div class="menu-item-footer">
+            <span class="menu-item-price">KES ${item.price}</span>
+          </div>
         </div>
-        <div class="menu-item-price">${item.price}</div>
       `;
       grid.appendChild(el);
     });

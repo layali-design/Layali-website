@@ -6,8 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 NOVA CAFE is a static single-page website for a premium halal cafe in Westlands, Nairobi. No build step, no framework, no dependencies — open `index.html` directly in a browser to preview.
 
-**Live site:** `https://layali-design.github.io/Novacafe-website/`
-**GitHub repo:** `https://github.com/layali-design/Novacafe-website`
+**Live site:** `https://novacafe-design.github.io/Novacafe-website/`
+**GitHub repo:** `https://github.com/novacafe-design/Novacafe-website`
 **Contact:** `info@novacafe.com`
 
 ## Previewing & Deploying
@@ -94,13 +94,13 @@ All colours and spacing are CSS variables at the top of `styles.css` under `:roo
 
 This folder was initialized as a git repo locally (not cloned). The remote is:
 ```bash
-git remote add origin https://github.com/layali-design/Layali-website.git
+git remote add origin https://github.com/novacafe-design/Layali-website.git
 ```
 If git isn't initialized, run the above two commands before pushing.
 
 ## Pending Items
 
-- **GitHub account rename:** `layali-design` → `Nova-Design` — not yet done (repo already renamed to `Novacafe-website`; account rename requires GitHub web UI).
+- **Reservation form:** wired to Formspree (mkoyryyz) — live and receiving submissions.
 - **Reservation form:** not wired to a real email endpoint yet.
 - **Story section image** (`.story-img`): still uses an Unsplash placeholder — replace with a real cafe interior photo.
 - **Gallery slots g1–g5**: still use Unsplash stock photos.

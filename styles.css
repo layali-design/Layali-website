@@ -284,17 +284,39 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .hero-image {
   position: absolute;
   inset: 0;
-  background-image: url('images/nova-exterior.jpeg');
+  background-image: url('images/BARISTA PLACE.jpg');
   background-size: cover;
-  background-position: center;
-  opacity: 0.75;
+  background-position: center 55%;
+  opacity: 0.95;
+  animation: heroPan 24s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+  from { transform: scale(1.05) translateX(0); }
+  to   { transform: scale(1.12) translateX(-1.5%); }
+}
+
+/* Keep espresso cup focal centered on portrait phones */
+@media (max-width: 640px) {
+  .hero-image {
+    background-position: 60% 60%;
+    animation-duration: 28s;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image { animation: none; transform: none; }
+  .hero-content { animation: none; }
+  .hero-word { animation: none; }
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.72) 100%);
+    radial-gradient(ellipse at 50% 70%, rgba(26, 15, 8, 0.15) 0%, rgba(26, 15, 8, 0.55) 55%, rgba(15, 8, 4, 0.85) 100%),
+    linear-gradient(180deg, rgba(15, 8, 4, 0.55) 0%, rgba(26, 15, 8, 0.25) 35%, rgba(26, 15, 8, 0.45) 75%, rgba(15, 8, 4, 0.78) 100%);
 }
 
 .hero-grain {
@@ -589,8 +611,8 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(60, 38, 19, 0.05), rgba(60, 38, 19, 0.2)),
-    url('images/nova-exterior.jpeg');
+    linear-gradient(180deg, rgba(60, 38, 19, 0.05), rgba(26, 15, 8, 0.25)),
+    url('images/CAFE CUPS.png');
   background-size: cover;
   background-position: center;
   transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -932,10 +954,10 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
    ============================================ */
 .feature {
   background:
-    linear-gradient(135deg, rgba(61, 38, 19, 0.94), rgba(61, 38, 19, 0.85)),
-    url('https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=2000&q=80');
+    linear-gradient(135deg, rgba(26, 15, 8, 0.91) 0%, rgba(61, 38, 19, 0.82) 100%),
+    url('images/coffe farm ethiopia.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 35%;
   background-attachment: fixed;
   color: var(--cream);
   padding: 5rem var(--pad);
@@ -1002,6 +1024,124 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 }
 
 /* ============================================
+   BRAND STRIP — "Take Nova with you"
+   ============================================ */
+.brandstrip {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  padding: 6rem var(--pad);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(196, 154, 108, 0.12);
+  border-bottom: 1px solid rgba(196, 154, 108, 0.12);
+}
+.brandstrip::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 154, 108, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+  filter: blur(8px);
+}
+.brandstrip-inner {
+  max-width: var(--section-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 880px) {
+  .brandstrip { padding: 4rem var(--pad); }
+  .brandstrip-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.brandstrip-image {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(196, 154, 108, 0.12);
+}
+.brandstrip-img {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 8, 4, 0.05), rgba(15, 8, 4, 0.25)),
+    url('images/COFFEE SPILLING.jpg') center / cover no-repeat;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brandstrip-image:hover .brandstrip-img { transform: scale(1.05); }
+.brandstrip-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: rgba(15, 8, 4, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--bronze);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.55rem 0.95rem;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 154, 108, 0.3);
+}
+
+.brandstrip-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 1rem 0 1.5rem;
+  color: var(--cream);
+}
+.brandstrip-text h3 em {
+  font-style: italic;
+  color: var(--bronze);
+  font-weight: 300;
+}
+.brandstrip-text p {
+  max-width: 480px;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+
+.brandstrip-list {
+  list-style: none;
+  margin: 0 0 2.2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.brandstrip-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+}
+.brandstrip-list li:last-child { border-bottom: none; }
+.brandstrip-list li span {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--bronze);
+  font-size: 0.95rem;
+  min-width: 1.6rem;
+}
+
+/* ============================================
    GALLERY
    ============================================ */
 .gallery {
@@ -1053,28 +1193,32 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 /* Nova Cafe exterior — actual photo */
 .g1 .g-img {
   background-image: url('images/nova-exterior.jpeg');
   background-position: center top;
 }
-/* Coffee being poured / latte art */
+/* Latte art on coffee beans — overhead */
 .g2 .g-img {
-  background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80');
+  background-image: url('images/COFFEE BEANS WITH CUP.jpg');
+  background-position: center 40%;
 }
-/* Pastries / croissants */
+/* Chalkboard menu wall — behind the bar */
 .g3 .g-img {
-  background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80');
+  background-image: url('images/COFFEE BREWER.png');
+  background-position: center 65%;
 }
 /* Coffee farm Ethiopia */
 .g4 .g-img {
   background-image: url('images/coffe farm ethiopia.jpg');
+  background-position: center 25%;
 }
-/* Coffee with heart */
+/* NOVA cup with laptop on bench — slow mornings */
 .g5 .g-img {
-  background-image: url('images/coffee with heart.jpg');
+  background-image: url('images/nova cup laptop.png');
+  background-position: 60% center;
 }
 /* Coffee bar */
 .g6 .g-img {
@@ -1085,11 +1229,16 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(180deg, transparent 50%, rgba(60, 38, 19, 0.25));
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(26, 15, 8, 0.45));
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.g:hover .g-img::after {
+  opacity: 0.6;
 }
 
-.g:hover .g-img { transform: scale(1.06); }
+.g:hover .g-img { transform: scale(1.05); }
 
 .g figcaption {
   position: absolute;
@@ -1450,14 +1599,15 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
    ============================================ */
 
 /* Sections offset so sticky nav doesn't overlap anchor targets */
-#story, #menu, #gallery, #visit {
+#story, #menu, #gallery, #visit, #togo {
   scroll-margin-top: 5rem;
 }
 
 /* Elements that fade up on scroll */
 .story-text, .story-image, .menu-header, .gallery-header,
 .visit-info, .visit-form-wrap, .feature-text, .feature-visual,
-.story-pillars, .visit-map, .footer-brand, .footer-cols {
+.story-pillars, .visit-map, .footer-brand, .footer-cols,
+.brandstrip-text, .brandstrip-image {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),

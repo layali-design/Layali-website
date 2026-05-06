@@ -74,7 +74,8 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(
   ".story-text, .story-image, .menu-header, .gallery-header, " +
   ".visit-info, .visit-form-wrap, .feature-text, .feature-visual, " +
-  ".story-pillars, .visit-map, .footer-brand, .footer-cols"
+  ".story-pillars, .visit-map, .footer-brand, .footer-cols, " +
+  ".brandstrip-text, .brandstrip-image"
 ).forEach(el => observer.observe(el));
 
 // Gallery cells — stagger via inline delay assigned once

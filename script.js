@@ -75,7 +75,8 @@ document.querySelectorAll(
   ".story-text, .story-image, .menu-header, .gallery-header, " +
   ".visit-info, .visit-form-wrap, .feature-text, .feature-visual, " +
   ".story-pillars, .visit-map, .footer-brand, .footer-cols, " +
-  ".brandstrip-text, .brandstrip-image"
+  ".brandstrip-text, .brandstrip-image, " +
+  ".signatures-header, .sig-card"
 ).forEach(el => observer.observe(el));
 
 // Gallery cells — stagger via inline delay assigned once

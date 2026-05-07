@@ -110,10 +110,17 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   gap: 0.5rem;
 }
 .brand-logo {
-  height: 42px;
-  width: auto;
-  mix-blend-mode: normal;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-deep);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(196, 154, 108, 0.2);
   display: block;
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .brand-logo { height: 38px; width: 38px; }
 }
 .brand-name {
   font-family: var(--font-body);
@@ -954,14 +961,123 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .menu-foot p { margin: 0.3rem 0; }
 
 /* ============================================
+   SIGNATURE DRINKS — Cold Bar trio
+   ============================================ */
+.signatures {
+  max-width: var(--section-max);
+  margin: 0 auto;
+  padding: 5rem var(--pad);
+  position: relative;
+}
+
+.signatures-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signatures-intro {
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.signatures-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+@media (max-width: 960px) and (min-width: 601px) {
+  .signatures-grid { grid-template-columns: repeat(2, 1fr); }
+  .sig-card:last-child { grid-column: span 2; max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .signatures-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .signatures { padding-top: 3.125rem; padding-bottom: 3.125rem; }
+  .signatures-header { margin-bottom: 2rem; }
+}
+
+.sig-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(62, 44, 35, 0.65) 0%, rgba(35, 22, 16, 0.85) 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.5s ease,
+              border-color 0.5s ease;
+}
+.sig-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 154, 108, 0.4);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+.sig-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+.sig-card:hover .sig-card-img { transform: scale(1.04); }
+.sig-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(15, 8, 4, 0.55) 100%);
+  pointer-events: none;
+}
+
+.sig-img-matcha     { background-image: url('images/new images/matcha nova.jpeg'); background-position: center 35%; }
+.sig-img-strawmatcha{ background-image: url('images/new images/strawberry matcha.jpeg'); background-position: center 35%; }
+.sig-img-berry      { background-image: url('images/new images/strawberry drink nova.jpeg'); background-position: center 40%; }
+
+.sig-card-body {
+  padding: 1.4rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.sig-card-tag {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.sig-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.sig-card-body p {
+  font-size: 0.93rem;
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+
+/* ============================================
    FEATURE STRIP
    ============================================ */
 .feature {
   background:
-    linear-gradient(135deg, rgba(26, 15, 8, 0.91) 0%, rgba(61, 38, 19, 0.82) 100%),
-    url('images/coffe farm ethiopia.jpg');
+    linear-gradient(135deg, rgba(15, 8, 4, 0.82) 0%, rgba(43, 30, 23, 0.70) 60%, rgba(15, 8, 4, 0.88) 100%),
+    url('images/new images/hot coffee branded.png');
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 40%;
   background-attachment: fixed;
   color: var(--cream);
   padding: 5rem var(--pad);
@@ -1204,15 +1320,15 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-image: url('images/nova-exterior.jpeg');
   background-position: center top;
 }
-/* Latte art on coffee beans — overhead */
+/* Editorial flat-lay — portafilters, beans, latte art */
 .g2 .g-img {
-  background-image: url('images/COFFEE BEANS WITH CUP.jpg');
-  background-position: center 40%;
+  background-image: url('images/new images/coffee prepare.jpg');
+  background-position: center center;
 }
-/* Chalkboard menu wall — behind the bar */
+/* Espresso shot in beans — overhead texture */
 .g3 .g-img {
-  background-image: url('images/COFFEE BREWER.png');
-  background-position: center 65%;
+  background-image: url('images/new images/coffee brewed.png');
+  background-position: center center;
 }
 /* Coffee farm Ethiopia */
 .g4 .g-img {
@@ -1224,9 +1340,10 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-image: url('images/nova cup laptop.png');
   background-position: 60% center;
 }
-/* Coffee bar */
+/* NOVA splash — branded portrait, fits narrow cell */
 .g6 .g-img {
-  background-image: url('images/coffee bar.jpg');
+  background-image: url('images/new images/nova splash coffee.png');
+  background-position: center 60%;
 }
 
 .g-img::after {
@@ -1637,7 +1754,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
    ============================================ */
 
 /* Sections offset so sticky nav doesn't overlap anchor targets */
-#story, #menu, #gallery, #visit, #togo {
+#story, #menu, #gallery, #visit, #togo, #signatures {
   scroll-margin-top: 5rem;
 }
 
@@ -1645,12 +1762,18 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .story-text, .story-image, .menu-header, .gallery-header,
 .visit-info, .visit-form-wrap, .feature-text, .feature-visual,
 .story-pillars, .visit-map, .footer-brand, .footer-cols,
-.brandstrip-text, .brandstrip-image {
+.brandstrip-text, .brandstrip-image,
+.signatures-header, .sig-card {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
               transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
+/* Signature card stagger */
+.sig-card:nth-child(1) { transition-delay: 0.05s; }
+.sig-card:nth-child(2) { transition-delay: 0.18s; }
+.sig-card:nth-child(3) { transition-delay: 0.32s; }
 
 /* Gallery cells — shorter, snappier */
 .g {

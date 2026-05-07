@@ -508,33 +508,6 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background: rgba(246, 239, 228, 0.2);
 }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(246, 239, 228, 0.45);
-  animation: fadeInUp 1s ease-out 1.6s both;
-}
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: var(--bronze);
-  animation: scrollLine 2s ease-in-out infinite;
-  transform-origin: top;
-}
-@keyframes scrollLine {
-  0%, 100% { transform: scaleY(0.3); opacity: 0.4; }
-  50% { transform: scaleY(1); opacity: 1; }
-}
-
 /* ============================================
    MARQUEE
    ============================================ */

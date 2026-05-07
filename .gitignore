@@ -1,0 +1,28 @@
+# Local Claude Code config, settings, and worktrees
+.claude/
+
+# Personal session notes (don't auto-commit chat logs / scratch files)
+SESSION-NOTES-*.md
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+.DS_Store
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temp
+*.log
+.cache/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+*.orig

@@ -1,10 +1,10 @@
 /* ============================================
-   NOVA CAFE — Warm & Elegant Cafe
+   NOVA CAFE - Warm & Elegant Cafe
    Palette: cream, bronze, rich brown
    ============================================ */
 
 :root {
-  /* Colors — dark coffee-brown theme */
+  /* Colors - dark coffee-brown theme */
   --bg: #2B1E17;
   --bg-warm: #3E2C23;
   --bg-deep: #231610;
@@ -303,7 +303,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   to   { transform: scale(1.12) translateX(-1.5%); }
 }
 
-/* Keep NOVA cups visible and centered on portrait phones — calmer Ken Burns */
+/* Keep NOVA cups visible and centered on portrait phones - calmer Ken Burns */
 @media (max-width: 640px) {
   .hero-image {
     background-position: center 40%;
@@ -934,7 +934,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .menu-foot p { margin: 0.3rem 0; }
 
 /* ============================================
-   SIGNATURE DRINKS — Cold Bar trio
+   SIGNATURE DRINKS - Cold Bar trio
    ============================================ */
 .signatures {
   max-width: var(--section-max);
@@ -1117,7 +1117,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 }
 
 /* ============================================
-   BRAND STRIP — "Take Nova with you"
+   BRAND STRIP - "Take Nova with you"
    ============================================ */
 .brandstrip {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
@@ -1288,17 +1288,17 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-position: center;
   transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-/* Nova Cafe exterior — actual photo */
+/* Nova Cafe exterior - actual photo */
 .g1 .g-img {
   background-image: url('images/nova-exterior.jpeg');
   background-position: center top;
 }
-/* Editorial flat-lay — portafilters, beans, latte art */
+/* Editorial flat-lay - portafilters, beans, latte art */
 .g2 .g-img {
   background-image: url('images/new images/coffee prepare.jpg');
   background-position: center center;
 }
-/* Espresso shot in beans — overhead texture */
+/* Espresso shot in beans - overhead texture */
 .g3 .g-img {
   background-image: url('images/new images/coffee brewed.png');
   background-position: center center;
@@ -1308,12 +1308,12 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-image: url('images/coffe farm ethiopia.jpg');
   background-position: center 25%;
 }
-/* NOVA cup with laptop on bench — slow mornings */
+/* NOVA cup with laptop on bench - slow mornings */
 .g5 .g-img {
   background-image: url('images/nova cup laptop.png');
   background-position: 60% center;
 }
-/* NOVA splash — branded portrait, fits narrow cell */
+/* NOVA splash - branded portrait, fits narrow cell */
 .g6 .g-img {
   background-image: url('images/new images/nova splash coffee.png');
   background-position: center 60%;
@@ -1564,18 +1564,18 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   .menu-foot { margin-top: 2rem; }
   .story-pillars { margin-top: 1.5rem; padding-top: 1.5rem; }
 
-  /* Hero — reduce oversized bottom margin on small screens */
+  /* Hero - reduce oversized bottom margin on small screens */
   .hero-eyebrow { margin-bottom: 1.1rem; }
   .hero-sub { margin-bottom: 1.75rem; }
   .hero-actions { margin-bottom: 2rem; }
   .hero-meta { gap: 1.25rem; }
 
-  /* Feature — constrain large decorative text */
+  /* Feature - constrain large decorative text */
   .feature-arabic { font-size: clamp(4rem, 20vw, 8rem); }
 }
 
 /* ============================================
-   SMALL PHONE — Hero breathing room & motion
+   SMALL PHONE - Hero breathing room & motion
    ============================================ */
 @media (max-width: 480px) {
   /* Hero: stack CTAs vertically, full-width up to 280px */
@@ -1606,7 +1606,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   .marquee-track { animation-duration: 75s; }
 }
 
-/* Gallery — single column on very narrow screens */
+/* Gallery - single column on very narrow screens */
 @media (max-width: 420px) {
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -1748,7 +1748,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .sig-card:nth-child(2) { transition-delay: 0.18s; }
 .sig-card:nth-child(3) { transition-delay: 0.32s; }
 
-/* Gallery cells — shorter, snappier */
+/* Gallery cells - shorter, snappier */
 .g {
   opacity: 0;
   transform: translateY(20px);

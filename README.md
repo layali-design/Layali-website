@@ -1,4 +1,4 @@
-# NOVA CAFE — Website
+# NOVA CAFE - Website
 
 A premium halal cafe website in Nairobi.
 
@@ -8,14 +8,14 @@ A premium halal cafe website in Nairobi.
 nova-cafe/
 ├── index.html      ← Main site structure (rarely edit)
 ├── styles.css      ← All styling: colours, fonts, layout
-├── menu.js         ← THE MENU — edit this often
+├── menu.js         ← THE MENU - edit this often
 ├── script.js       ← Site interactions (rarely edit)
 └── README.md
 ```
 
 ## Editing the Menu
 
-Open **`menu.js`**. The menu is structured as 5 categories — Coffee, Tea & Specialty, Breakfast, Lunch & Mains, Pastry & Bakery.
+Open **`menu.js`**. The menu is structured as 5 categories - Coffee, Tea & Specialty, Breakfast, Lunch & Mains, Pastry & Bakery.
 
 ### Change a price
 ```js
@@ -28,17 +28,17 @@ Copy any existing line and edit:
 ```js
 { name: "New Drink", desc: "Short description.", price: "500", tag: "new" },
 ```
-**Note the comma at the end** — every item except the last in a category needs one.
+**Note the comma at the end** - every item except the last in a category needs one.
 
 ### Remove an item
 Delete the entire line, including the trailing comma.
 
 ### Tags
 Set `tag` to one of:
-- `"new"` — bronze "New" badge
-- `"veg"` — green "Veg" badge
-- `"spicy"` — orange "Spicy" badge
-- `""` — no tag (most items)
+- `"new"` - bronze "New" badge
+- `"veg"` - green "Veg" badge
+- `"spicy"` - orange "Spicy" badge
+- `""` - no tag (most items)
 
 ### Add a whole new category
 Copy an entire `{ id: ..., label: ..., title: ..., description: ..., items: [...] }` block.
@@ -51,7 +51,7 @@ The `id` must be unique and lowercase, no spaces.
 | Phone, email, address, hours  | `index.html` | The `<!-- VISIT / CONTACT -->` section |
 | Hero headline & tagline       | `index.html` | The `<!-- HERO -->` section       |
 | About / Story copy            | `index.html` | The `<!-- STORY -->` section      |
-| Brand colours                 | `styles.css` | Top of file — `:root { --bronze: ... }` |
+| Brand colours                 | `styles.css` | Top of file - `:root { --bronze: ... }` |
 | Fonts                         | `styles.css` | `--font-display` and `--font-body`|
 | Social links                  | `index.html` | Search for `Instagram`            |
 
@@ -59,8 +59,8 @@ The `id` must be unique and lowercase, no spaces.
 
 In `styles.css`, the top section has all the colours:
 ```css
---bronze: #a87a3d;     /* main accent — buttons, prices */
---brown-deep: #3d2613; /* darkest — headings, dark sections */
+--bronze: #a87a3d;     /* main accent - buttons, prices */
+--brown-deep: #3d2613; /* darkest - headings, dark sections */
 --cream: #faf5ec;      /* light text on dark */
 --bg: #f6efe4;         /* page background */
 ```
@@ -69,7 +69,7 @@ Change the hex codes and the whole site updates.
 ## Deploying to GitHub Pages
 
 1. Create a new GitHub repository (public).
-2. Upload all four files (`index.html`, `styles.css`, `menu.js`, `script.js`) — and this README — to the root of the repo.
+2. Upload all four files (`index.html`, `styles.css`, `menu.js`, `script.js`) - and this README - to the root of the repo.
 3. In the repo go to **Settings → Pages**.
 4. Under **Source**, select branch `main` and folder `/ (root)`. Click **Save**.
 5. Wait ~1 minute. Your site will be live at:
@@ -89,7 +89,7 @@ Once you buy a domain (e.g. `novacafe.com`):
 
 Right now the form shows a "Thank you" message but doesn't email anyone. To make it work:
 
-**Option 1 — Formspree (easiest, free for ~50 submissions/month)**
+**Option 1 - Formspree (easiest, free for ~50 submissions/month)**
 1. Sign up at formspree.io and create a form.
 2. In `index.html`, find `<form class="visit-form" onsubmit="handleReservation(event)">` and change to:
    ```html
@@ -98,7 +98,7 @@ Right now the form shows a "Thank you" message but doesn't email anyone. To make
 3. Remove the `onsubmit` handler.
 4. Submissions will be emailed to you automatically.
 
-**Option 2 — Netlify Forms** (if you switch hosting to Netlify, also free).
+**Option 2 - Netlify Forms** (if you switch hosting to Netlify, also free).
 
 ## Photos
 
@@ -114,4 +114,4 @@ Recommended photo sizes:
 
 ---
 
-**Need to make a change and not sure how?** The structure is designed so that 95% of edits happen in `menu.js` and `index.html`. Take a copy before editing — and you can always revert via GitHub history.
+**Need to make a change and not sure how?** The structure is designed so that 95% of edits happen in `menu.js` and `index.html`. Take a copy before editing - and you can always revert via GitHub history.

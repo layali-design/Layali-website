@@ -1,5 +1,5 @@
 /* ============================================================
-   NOVA CAFE — Site interactions
+   NOVA CAFE - Site interactions
    ============================================================ */
 
 // Sticky nav shadow on scroll
@@ -40,7 +40,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Reservation form (placeholder handler — connect to email service later)
+// Reservation form (placeholder handler - connect to email service later)
 function handleReservation(e) {
   e.preventDefault();
   const form = e.target;
@@ -79,7 +79,7 @@ document.querySelectorAll(
   ".signatures-header, .sig-card"
 ).forEach(el => observer.observe(el));
 
-// Gallery cells — stagger via inline delay assigned once
+// Gallery cells - stagger via inline delay assigned once
 document.querySelectorAll(".g").forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.07}s`;
   observer.observe(el);

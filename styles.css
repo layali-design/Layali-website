@@ -1572,6 +1572,75 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 
   /* Feature - constrain large decorative text */
   .feature-arabic { font-size: clamp(4rem, 20vw, 8rem); }
+
+  /* Marquee - calmer, less dominant on mobile */
+  .marquee { padding: 1rem 0; }
+  .marquee-track {
+    font-size: 1.05rem;
+    gap: 4.5rem;
+    animation-duration: 110s;
+  }
+}
+
+/* ============================================
+   MOBILE IMAGE RESPONSIVENESS
+   Less aggressive crops, keep logos & focal points visible,
+   gentler proportions for narrow viewports.
+   ============================================ */
+@media (max-width: 768px) {
+  /* Hero - keep NOVA-branded cups & logo centered on portrait phones */
+  .hero-image { background-position: center 40%; }
+
+  /* Story portrait - softer aspect so the brewer/scene isn't clipped wide */
+  .story-img-frame { aspect-ratio: 4 / 3; }
+  .story-img { background-position: center 55%; }
+
+  /* Signature drink cards - squarer crop keeps cup logos in frame */
+  .sig-card-img { aspect-ratio: 1 / 1; }
+  .sig-img-matcha      { background-position: center 45%; }
+  .sig-img-strawmatcha { background-position: center 45%; }
+  .sig-img-berry       { background-position: center 50%; }
+
+  /* Feature strip - fixed parallax misrenders on iOS/Android; scroll + recenter */
+  .feature {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+
+  /* Gallery - slightly taller cells & gentler framing for narrow widths */
+  .gallery-grid { grid-template-rows: repeat(3, 260px); }
+  .g1 .g-img { background-position: center 18%; }
+  .g5 .g-img { background-position: 55% center; }
+  .g6 .g-img { background-position: center 50%; }
+}
+
+/* ============================================
+   MOBILE UX REFINEMENTS
+   Spacing, readability, touch comfort, visual balance.
+   ============================================ */
+@media (max-width: 768px) {
+  /* Section titles - slightly looser leading for legibility at smaller sizes */
+  .section-title { line-height: 1.15; }
+
+  /* Hero - trim dead space at the bottom on portrait phones */
+  .hero { padding-bottom: 2.5rem; }
+
+  /* Mobile drawer - meet 44px tap target on each link */
+  .mobile-menu a { padding: 0.85rem 0; }
+
+  /* Hours rows - more comfortable tap-aligned spacing */
+  .hours li { padding: 0.6rem 0; }
+
+  /* Visit socials - small text links get a bigger hit area */
+  .socials { gap: 1.25rem; }
+  .socials a { padding: 0.3rem 0; }
+
+  /* Footer column links - finger-friendly tap zones */
+  .footer-cols a { padding: 0.45rem 0; }
+
+  /* Footer social buttons - closer to 44px ideal, gentler gap */
+  .footer-socials { gap: 0.7rem; }
+  .footer-social-btn { width: 42px; height: 42px; }
 }
 
 /* ============================================
@@ -1602,8 +1671,12 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   /* Give the hero a touch more top padding so content isn't flush */
   .hero { padding-top: 3rem; }
 
-  /* Marquee: much slower on mobile for comfortable reading */
-  .marquee-track { animation-duration: 75s; }
+  /* Marquee: even slower on small phones for comfortable reading */
+  .marquee-track {
+    font-size: 1rem;
+    gap: 5rem;
+    animation-duration: 130s;
+  }
 }
 
 /* Gallery - single column on very narrow screens */
@@ -1615,8 +1688,11 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   .g1, .g2, .g3, .g4, .g5, .g6 {
     grid-column: span 1;
     grid-row: span 1;
-    height: 220px;
+    height: 280px;
   }
+  /* Storefront and splash portraits - keep more room; lift focal point */
+  .g1 { height: 300px; }
+  .g6 { height: 300px; }
 }
 
 /* ============================================

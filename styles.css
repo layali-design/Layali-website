@@ -319,6 +319,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   background-position: center 45%;
   opacity: 0.92;
   animation: heroPan 24s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes heroPan {

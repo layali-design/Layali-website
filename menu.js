@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
 
       const imgHtml = item.img
-        ? `<div class="menu-item-img">${popularHtml}<img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
+        ? `<div class="menu-item-img">${popularHtml}<img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async" width="300" height="225" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
         : `<div class="menu-item-img img-fallback" data-letter="${item.name.charAt(0)}">${popularHtml}</div>`;
 
       el.innerHTML = `

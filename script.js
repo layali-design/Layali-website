@@ -2,12 +2,17 @@
    NOVA CAFE - Site interactions
    ============================================================ */
 
-// Sticky nav shadow on scroll
+// Sticky nav shadow + scroll progress
 const nav = document.getElementById("nav");
+const scrollProgress = document.getElementById("scrollProgress");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 30) nav.classList.add("scrolled");
   else nav.classList.remove("scrolled");
-});
+
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = max > 0 ? window.scrollY / max : 0;
+  scrollProgress.style.transform = `scaleX(${ratio})`;
+}, { passive: true });
 
 // Mobile menu toggle
 const burger = document.getElementById("navBurger");

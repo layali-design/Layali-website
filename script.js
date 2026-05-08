@@ -81,7 +81,7 @@ document.querySelectorAll(
   ".visit-info, .visit-form-wrap, .feature-text, .feature-visual, " +
   ".story-pillars, .visit-map, .footer-brand, .footer-cols, " +
   ".brandstrip-text, .brandstrip-image, " +
-  ".signatures-header, .sig-card"
+  ".signatures-header, .sig-card, .quote-inner"
 ).forEach(el => observer.observe(el));
 
 // Gallery cells - stagger via inline delay assigned once

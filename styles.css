@@ -314,7 +314,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .hero-image {
   position: absolute;
   inset: 0;
-  background-image: url('images/branded cup NOVA.png');
+  background-image: url('images/branded cup NOVA.webp');
   background-size: cover;
   background-position: center 45%;
   opacity: 0.92;
@@ -620,7 +620,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   inset: 0;
   background-image:
     linear-gradient(180deg, rgba(60, 38, 19, 0.05), rgba(26, 15, 8, 0.25)),
-    url('images/COFFEE BREWER.png');
+    url('images/COFFEE BREWER.webp');
   background-size: cover;
   background-position: center 65%;
   transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1082,9 +1082,9 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   pointer-events: none;
 }
 
-.sig-img-matcha     { background-image: url('images/new images/matcha nova.jpeg'); background-position: center 35%; }
-.sig-img-strawmatcha{ background-image: url('images/new images/strawberry matcha.jpeg'); background-position: center 35%; }
-.sig-img-berry      { background-image: url('images/new images/strawberry drink nova.jpeg'); background-position: center 40%; }
+.sig-img-matcha     { background-image: url('images/new images/matcha nova.webp'); background-position: center 35%; }
+.sig-img-strawmatcha{ background-image: url('images/new images/strawberry matcha.webp'); background-position: center 35%; }
+.sig-img-berry      { background-image: url('images/new images/strawberry drink nova.webp'); background-position: center 40%; }
 
 .sig-card-body {
   padding: 1.4rem 1.4rem 1.6rem;
@@ -1120,7 +1120,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .feature {
   background:
     linear-gradient(135deg, rgba(15, 8, 4, 0.82) 0%, rgba(43, 30, 23, 0.70) 60%, rgba(15, 8, 4, 0.88) 100%),
-    url('images/new images/hot coffee branded.png');
+    url('images/new images/hot coffee branded.webp');
   background-size: cover;
   background-position: center 40%;
   background-attachment: fixed;
@@ -1237,7 +1237,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   inset: 0;
   background:
     linear-gradient(180deg, rgba(15, 8, 4, 0.05), rgba(15, 8, 4, 0.25)),
-    url('images/COFFEE SPILLING.jpg') center / cover no-repeat;
+    url('images/COFFEE SPILLING.webp') center / cover no-repeat;
   transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .brandstrip-image:hover .brandstrip-img { transform: scale(1.05); }
@@ -1362,32 +1362,32 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 }
 /* Nova Cafe exterior - actual photo */
 .g1 .g-img {
-  background-image: url('images/nova-exterior.jpeg');
+  background-image: url('images/nova-exterior.webp');
   background-position: center top;
 }
 /* Editorial flat-lay - portafilters, beans, latte art */
 .g2 .g-img {
-  background-image: url('images/new images/coffee prepare.jpg');
+  background-image: url('images/new images/coffee prepare.webp');
   background-position: center center;
 }
 /* Espresso shot in beans - overhead texture */
 .g3 .g-img {
-  background-image: url('images/new images/coffee brewed.png');
+  background-image: url('images/new images/coffee brewed.webp');
   background-position: center center;
 }
 /* Coffee farm Ethiopia */
 .g4 .g-img {
-  background-image: url('images/coffe farm ethiopia.jpg');
+  background-image: url('images/coffe farm ethiopia.webp');
   background-position: center 25%;
 }
 /* NOVA cup with laptop on bench - slow mornings */
 .g5 .g-img {
-  background-image: url('images/nova cup laptop.png');
+  background-image: url('images/nova cup laptop.webp');
   background-position: 60% center;
 }
 /* NOVA splash - branded portrait, fits narrow cell */
 .g6 .g-img {
-  background-image: url('images/new images/nova splash coffee.png');
+  background-image: url('images/new images/nova splash coffee.webp');
   background-position: center 60%;
 }
 

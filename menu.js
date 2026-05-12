@@ -4,11 +4,14 @@
    HOW TO EDIT:
 
    To change a price:    edit the "price" value (just the number)
+   For two-size pricing: use "280 / 350" — the renderer will
+                         automatically show an "S · L" label above it
    To rename an item:    edit the "name" value
    To remove an item:    delete the entire { } block (including the comma)
    To add an item:       copy an existing { } block and edit
-   To add a tag:         set "tag" to "new", "veg", or "spicy"
+   To add a tag:         set "tag" to "new", "signature", "veg", or "spicy"
                          (or leave it as "" for no tag)
+   To mark a hero item:  add  popular: true,
    To change a photo:    swap the URL inside img: "..."
                          (use any Unsplash, Pexels, or your own image URL)
 
@@ -17,93 +20,89 @@
 
 const MENU = [
   {
-    id: "coffee",
-    label: "Coffee",
+    id: "coffee-hot",
+    label: "Coffee · Hot",
     title: "From the Bar",
-    description: "East African and Yemeni single-origins, roasted weekly in Karen.",
+    description: "Pulled all day. Where two prices show, it is small or large.",
+    extras: "Add cold foam +150 · Non-dairy milk (soy, almond, oat) +120",
     items: [
-      { name: "Espresso",          desc: "A single, slow extraction.",                              price: "250", tag: "",    img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" },
-      { name: "Macchiato",         desc: "Espresso with a hush of foamed milk.",                    price: "300", tag: "",    img: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cortado",           desc: "Equal parts espresso and warm milk.",                     price: "380", tag: "",    img: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=300&q=80" },
-      { name: "Flat White",        desc: "Velvet microfoam over a double shot.",                    price: "420", tag: "", popular: true, img: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cappuccino",        desc: "Tradition. Soft foam, fine cocoa.",                       price: "450", tag: "",    img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cafe Latte",        desc: "Long, creamy, gentle.",                                   price: "480", tag: "",    img: "https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=300&q=80" },
-      { name: "Mocha",             desc: "House dark chocolate, espresso, steamed milk.",           price: "520", tag: "",    img: "https://images.unsplash.com/photo-1542990253-a781e04c0082?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pour Over",         desc: "Today's single-origin, brewed by hand. Ask our barista.", price: "550", tag: "",    img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cold Brew",         desc: "Steeped 18 hours. Smooth, rounded, bright.",              price: "500", tag: "",    img: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" },
-      { name: "Iced Latte",        desc: "Double shot over ice and cold milk.",                     price: "520", tag: "",    img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=300&q=80" },
-      { name: "Arabic Coffee",     desc: "Lightly roasted, cardamom, served with dates.",           price: "450", tag: "new", img: "https://images.unsplash.com/photo-1559525839-d9acfd02c9e0?auto=format&fit=crop&w=300&q=80" },
-      { name: "Turkish Coffee",    desc: "Stone-ground, simmered slowly in a copper cezve.",        price: "450", tag: "",    img: "https://images.unsplash.com/photo-1518057111178-44a106bad636?auto=format&fit=crop&w=300&q=80" }
+      { name: "Espresso",          desc: "A single, slow extraction.",                          price: "200",       tag: "",                       img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" },
+      { name: "Cappuccino",        desc: "Soft foam, fine cocoa, an old friend.",               price: "280 / 350", tag: "",                       img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=300&q=80" },
+      { name: "Latte",             desc: "Long and creamy. Vanilla or caramel.",                price: "300 / 400", tag: "", popular: true,         img: "https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=300&q=80" },
+      { name: "Spanish Latte",     desc: "Espresso, steamed milk, a thread of condensed milk.", price: "300 / 400", tag: "",                       img: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=300&q=80" },
+      { name: "Americano",         desc: "Espresso lengthened with hot water.",                 price: "220 / 300", tag: "",                       img: "https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=300&q=80" },
+      { name: "Hot Chocolate",     desc: "Dark chocolate, steamed milk, a quiet finish.",       price: "350 / 500", tag: "",                       img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=300&q=80" },
+      { name: "Mocha",             desc: "House dark chocolate, espresso, steamed milk.",       price: "250 / 350", tag: "",                       img: "https://images.unsplash.com/photo-1542990253-a781e04c0082?auto=format&fit=crop&w=300&q=80" },
+      { name: "Karak Tea",         desc: "Black tea, evaporated milk, cardamom, slow simmer.",  price: "250 / 350", tag: "",                       img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=300&q=80" }
     ]
   },
   {
-    id: "tea",
-    label: "Tea & Specialty",
-    title: "Beyond the Bar",
-    description: "Loose-leaf teas, signature drinks, and the occasional discovery.",
+    id: "coffee-iced",
+    label: "Coffee · Iced",
+    title: "Cold & Slow",
+    description: "Built over ice for the warm afternoons.",
+    extras: "Add cold foam +150 · Non-dairy milk (soy, almond, oat) +120",
     items: [
-      { name: "Karak Chai",         desc: "Black tea, evaporated milk, cardamom, saffron.",         price: "380", tag: "",    img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=300&q=80" },
-      { name: "Moroccan Mint Tea",  desc: "Gunpowder green, fresh spearmint, light honey.",         price: "350", tag: "",    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=300&q=80" },
-      { name: "Rose Latte",         desc: "Steamed milk, rose, pistachio dust.",                    price: "520", tag: "new", img: "https://images.unsplash.com/photo-1558122104-355edad709f6?auto=format&fit=crop&w=300&q=80" },
-      { name: "Saffron Latte",      desc: "Persian saffron, honey, vanilla bean.",                  price: "580", tag: "",    img: "https://images.unsplash.com/photo-1572286258217-215cf8e9d99f?auto=format&fit=crop&w=300&q=80" },
-      { name: "Matcha Latte",       desc: "Ceremonial-grade matcha, oat or whole milk.",            price: "550", tag: "veg", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=300&q=80" },
-      { name: "Spiced Hot Chocolate", desc: "70% dark, cinnamon, cardamom, sea salt.",              price: "500", tag: "",    img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=300&q=80" },
-      { name: "Hibiscus Cooler",    desc: "Hibiscus, lime, mint, sparkling water.",                 price: "420", tag: "veg", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=300&q=80" },
-      { name: "Mango Lassi",        desc: "Yogurt, alphonso mango, cardamom.",                      price: "450", tag: "",    img: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" },
-      { name: "Fresh Juice",        desc: "Orange, watermelon, or beetroot-ginger.",                price: "400", tag: "veg", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=300&q=80" },
-      { name: "Sparkling Lemonade", desc: "Lemon, mint, basil, tonic.",                             price: "380", tag: "veg", img: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9e?auto=format&fit=crop&w=300&q=80" }
+      { name: "Iced Latte",         desc: "Double shot, cold milk, ice. Vanilla or caramel.", price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Spanish Latte", desc: "Sweet, milky, the crowd favourite over ice.",      price: "450", tag: "", popular: true,            img: "https://images.unsplash.com/photo-1592318951566-46d7b3ce81bf?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Cappuccino",    desc: "Espresso, cold milk, a soft cap of foam.",         price: "300", tag: "",                          img: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Americano",     desc: "Espresso, cold water, ice. Clean and bright.",     price: "270", tag: "",                          img: "https://images.unsplash.com/photo-1559496417-e7f25cb247cd?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Mocha",         desc: "Dark chocolate, espresso, cold milk over ice.",    price: "400", tag: "",                          img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" },
+      { name: "Vanilla Shake",      desc: "Blended vanilla, cold milk, soft serve finish.",   price: "500", tag: "",                          img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=300&q=80" },
+      { name: "Espresso Shake",     desc: "Espresso blended cold with vanilla cream.",        price: "550", tag: "",                          img: "https://images.unsplash.com/photo-1559525839-d9acfd02c9e0?auto=format&fit=crop&w=300&q=80" },
+      { name: "Lotus Shake",        desc: "Blended Lotus Biscoff, milk, biscuit crumb.",      price: "550", tag: "",                          img: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Karak",         desc: "Our cardamom karak, chilled and poured over ice.", price: "650", tag: "",                          img: "https://images.unsplash.com/photo-1558122104-355edad709f6?auto=format&fit=crop&w=300&q=80" },
+      { name: "Iced Karak + Shot",  desc: "Iced karak laced with a shot of espresso.",        price: "780", tag: "new",                       img: "https://images.unsplash.com/photo-1518057111178-44a106bad636?auto=format&fit=crop&w=300&q=80" },
+      { name: "Karak Krusher",      desc: "Karak, blended to a snow. Cold, spiced, slushy.",  price: "750", tag: "signature",                 img: "https://images.unsplash.com/photo-1558857563-c0c6ee6ff8a4?auto=format&fit=crop&w=300&q=80" }
     ]
   },
   {
-    id: "breakfast",
-    label: "Breakfast",
-    title: "All Morning",
-    description: "Served until 1pm. Eggs from a small farm in Limuru.",
+    id: "matcha",
+    label: "Matcha",
+    title: "Stone-Ground, Whisked",
+    description: "Ceremonial-grade matcha, whisked to order with cold milk.",
     items: [
-      { name: "Avocado on Sourdough", desc: "Smashed avocado, chilli oil, dukkah, lime, soft egg.", price: "950",  tag: "veg", popular: true, img: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?auto=format&fit=crop&w=300&q=80" },
-      { name: "Shakshuka",            desc: "Eggs poached in spiced tomato, feta, herbs, flatbread.", price: "1,150", tag: "",   img: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=300&q=80" },
-      { name: "Eggs Royale",          desc: "Smoked salmon, poached eggs, hollandaise, English muffin.", price: "1,450", tag: "", img: "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=300&q=80" },
-      { name: "Halloumi Plate",       desc: "Grilled halloumi, tomato, olives, za'atar, sourdough.", price: "1,250", tag: "veg", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=300&q=80" },
-      { name: "Nova Breakfast",       desc: "Two eggs, beef bacon, mushroom, tomato, hash, toast.", price: "1,650", tag: "",   img: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=300&q=80" },
-      { name: "Granola Bowl",         desc: "House granola, Greek yogurt, honey, seasonal fruit.",  price: "850",  tag: "veg", img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=300&q=80" },
-      { name: "Fruit Plate",          desc: "Seasonal Kenyan fruits, mint, lime.",                  price: "750",  tag: "veg", img: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pancake Stack",        desc: "Buttermilk pancakes, maple, berries, vanilla cream.",  price: "950",  tag: "veg", img: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=300&q=80" }
+      { name: "Vanilla Matcha",      desc: "Matcha, vanilla, cold milk, ice.",                       price: "650", tag: "",                          img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=300&q=80" },
+      { name: "Caramel Matcha",      desc: "Matcha, salted caramel, cold milk.",                     price: "650", tag: "",                          img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=300&q=80" },
+      { name: "Strawberry Matcha",   desc: "Matcha, fresh strawberry, cold milk.",                   price: "650", tag: "", popular: true,            img: "https://images.unsplash.com/photo-1648414104070-25e1cc24ff3e?auto=format&fit=crop&w=300&q=80" },
+      { name: "Blueberry Matcha",    desc: "Matcha, wild blueberry compote, cold milk.",             price: "650", tag: "",                          img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=300&q=80" },
+      { name: "Nova Special Matcha", desc: "Our matcha, crowned with vanilla cold foam.",            price: "800", tag: "signature",                 img: "https://images.unsplash.com/photo-1626252859586-aedef72e770b?auto=format&fit=crop&w=300&q=80" }
     ]
   },
   {
-    id: "lunch",
-    label: "Lunch & Mains",
-    title: "From the Kitchen",
-    description: "Served from 12. Halal-certified meats, sourced locally.",
+    id: "mojitos",
+    label: "Mojitos",
+    title: "Garden & Glass",
+    description: "Built tall with crushed ice, mint, lime, and a long stir.",
     items: [
-      { name: "Beef Burger",            desc: "House grind, cheddar, caramelised onion, brioche, fries.", price: "1,650", tag: "",      img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80" },
-      { name: "Chicken Shawarma Wrap",  desc: "Spit-roasted chicken, garlic toum, pickles, sumac.",       price: "1,250", tag: "",      img: "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=300&q=80" },
-      { name: "Lamb Kofta Plate",       desc: "Charcoal-grilled kofta, hummus, salata, flatbread.",       price: "1,750", tag: "spicy", img: "https://images.unsplash.com/photo-1633237308525-cd587cf71926?auto=format&fit=crop&w=300&q=80" },
-      { name: "Grilled Chicken Caesar", desc: "Romaine, parmesan, sourdough croutons, anchovy.",          price: "1,350", tag: "",      img: "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=300&q=80" },
-      { name: "Fattoush Salad",         desc: "Crisp greens, sumac, pomegranate, feta, fried khubz.",     price: "1,150", tag: "veg",   img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=300&q=80" },
-      { name: "Spaghetti Pomodoro",     desc: "San Marzano, basil, parmesan, olive oil.",                 price: "1,250", tag: "veg",   img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=300&q=80" },
-      { name: "Truffle Mushroom Pasta", desc: "Tagliatelle, wild mushroom, truffle, parmesan.",           price: "1,650", tag: "veg",   img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=300&q=80" },
-      { name: "Margherita Pizza",       desc: "Wood-fired, San Marzano, fior di latte, basil.",           price: "1,350", tag: "veg",   img: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=300&q=80" },
-      { name: "Spicy Chicken Pizza",    desc: "Chicken, jalapeño, smoked mozzarella, harissa.",           price: "1,550", tag: "spicy", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80" },
-      { name: "Grilled Salmon",         desc: "Norwegian salmon, lemon couscous, charred greens.",        price: "2,250", tag: "",      img: "https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=300&q=80" }
+      { name: "Strawberry Mojito", desc: "Muddled strawberry, mint, lime, soda.",           price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1551734413-1ea2cb38f57b?auto=format&fit=crop&w=300&q=80" },
+      { name: "Passion Mojito",    desc: "Passion fruit, mint, lime, soda.",                price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=300&q=80" },
+      { name: "Kiwi Mojito",       desc: "Fresh kiwi, mint, lime, soda.",                   price: "500", tag: "",                          img: "https://images.unsplash.com/photo-1623778029112-cf9c5e93e83a?auto=format&fit=crop&w=300&q=80" },
+      { name: "Blueberry Mojito",  desc: "Blueberry, mint, lime, soda.",                    price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1638176067000-9e2e36b18b34?auto=format&fit=crop&w=300&q=80" },
+      { name: "Peach Mojito",      desc: "White peach, mint, lime, soda.",                  price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9e?auto=format&fit=crop&w=300&q=80" },
+      { name: "Blue Lagoon",       desc: "Blue curaçao tones, mint, lime, soda.",           price: "450", tag: "",                          img: "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=300&q=80" },
+      { name: "Nova Select",       desc: "Espresso Mojito, Espresso Tornado, or Americano Honey. Ask the bar.", price: "550", tag: "signature", popular: true, img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=300&q=80" }
     ]
   },
   {
-    id: "pastry",
-    label: "Pastry & Bakery",
-    title: "From the Counter",
-    description: "Baked from 5am, every day. Whole cakes available, just order ahead.",
+    id: "snacks",
+    label: "Snacks",
+    title: "Something to Bite",
+    description: "Quick, hot, made to share. Add fries to any plate for 100.",
     items: [
-      { name: "Almond Croissant",   desc: "Twice-baked, frangipane, slivered almonds.",             price: "350", tag: "",    img: "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pain au Chocolat",   desc: "72-hour laminated dough, dark chocolate.",               price: "320", tag: "",    img: "https://images.unsplash.com/photo-1630967392068-0848c0e7ee16?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pistachio Knafeh",   desc: "Crisp pastry, sweet cheese, pistachio, rosewater syrup.", price: "650", tag: "new", img: "https://images.unsplash.com/photo-1593504049359-74330189a345?auto=format&fit=crop&w=300&q=80" },
-      { name: "Date & Walnut Cake", desc: "Sticky toffee, Medjool dates, candied walnut.",          price: "550", tag: "",    img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=300&q=80" },
-      { name: "Basbousa",           desc: "Semolina, coconut, orange blossom, almond.",             price: "450", tag: "veg", img: "https://images.unsplash.com/photo-1606101273945-e9eba4f0b0eb?auto=format&fit=crop&w=300&q=80" },
-      { name: "Lotus Cheesecake",   desc: "Baked vanilla cheesecake, Lotus crumb, caramel.",        price: "650", tag: "veg", img: "https://images.unsplash.com/photo-1567171466295-4afa63d45416?auto=format&fit=crop&w=300&q=80" },
-      { name: "Pistachio Brownie",  desc: "Dark chocolate, Aleppo pistachio, sea salt.",            price: "450", tag: "",    img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cinnamon Bun",       desc: "Soft brioche, cinnamon sugar, cream cheese glaze.",      price: "380", tag: "",    img: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=300&q=80" },
-      { name: "Cardamom Bun",       desc: "Swedish-style, cardamom sugar, pearl sugar.",            price: "380", tag: "",    img: "https://images.unsplash.com/photo-1568827999250-3f6afff96e66?auto=format&fit=crop&w=300&q=80" },
-      { name: "Sourdough Loaf",     desc: "Naturally leavened, bake from 11am. Whole loaf.",        price: "550", tag: "veg", img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=300&q=80" }
+      { name: "Potato Waffles",    desc: "Crisp potato waffle, shredded chicken, melted cheese.",       price: "700", tag: "signature", popular: true, img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=300&q=80" },
+      { name: "Nova Burger Wrap",  desc: "Beef or chicken patty, our sauces, rolled in tortilla.",     price: "650", tag: "signature",                 img: "https://images.unsplash.com/photo-1633321702518-7feccafb94d5?auto=format&fit=crop&w=300&q=80" }
+    ]
+  },
+  {
+    id: "desserts",
+    label: "Desserts",
+    title: "The Sweet End",
+    description: "Small plates, finished by hand.",
+    items: [
+      { name: "Tiramisu Balls",         desc: "Mascarpone and espresso-soaked sponge, rolled in cocoa.",   price: "470", tag: "",          img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=300&q=80" },
+      { name: "Sticky Toffee Pudding",  desc: "Warm date sponge, toffee sauce, soft cream.",               price: "450", tag: "",          img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=300&q=80" },
+      { name: "Japanese Cream Sandwich", desc: "Milk bread, whipped cream, your choice of pistachio, strawberry, maple, or chocolate.", price: "250", tag: "new", popular: true, img: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=300&q=80" }
     ]
   }
 ];
@@ -153,12 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const el = document.createElement("div");
       el.className = "menu-item";
 
-      const tagHtml = item.tag
-        ? `<span class="menu-item-tag ${item.tag}">${
-            item.tag === "new" ? "New" :
-            item.tag === "veg" ? "Veg" :
-            item.tag === "spicy" ? "Spicy" : item.tag
-          }</span>`
+      const tagLabel = {
+        new: "New",
+        signature: "Signature",
+        veg: "Veg",
+        spicy: "Spicy"
+      };
+      const tagHtml = item.tag && tagLabel[item.tag]
+        ? `<span class="menu-item-tag ${item.tag}">${tagLabel[item.tag]}</span>`
         : "";
 
       const popularHtml = item.popular
@@ -169,13 +170,19 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<div class="menu-item-img">${popularHtml}<img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async" width="300" height="225" onerror="this.parentElement.classList.add('img-fallback');this.parentElement.dataset.letter='${item.name.charAt(0)}';this.remove();" /></div>`
         : `<div class="menu-item-img img-fallback" data-letter="${item.name.charAt(0)}">${popularHtml}</div>`;
 
+      // Two-size pricing: detect "200 / 350" style and label it
+      const isTwoSize = /^\s*\d[\d,]*\s*\/\s*\d[\d,]*\s*$/.test(item.price);
+      const priceHtml = isTwoSize
+        ? `<span class="menu-item-sizes">S · L</span><span class="menu-item-price">KES ${item.price}</span>`
+        : `<span class="menu-item-price">KES ${item.price}</span>`;
+
       el.innerHTML = `
         ${imgHtml}
         <div class="menu-item-body">
           <div class="menu-item-name">${item.name} ${tagHtml}</div>
           <p class="menu-item-desc">${item.desc}</p>
           <div class="menu-item-footer">
-            <span class="menu-item-price">KES ${item.price}</span>
+            ${priceHtml}
           </div>
         </div>
       `;
@@ -183,6 +190,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     wrap.appendChild(grid);
+
+    if (cat.extras) {
+      const extras = document.createElement("p");
+      extras.className = "menu-cat-extras";
+      extras.textContent = cat.extras;
+      wrap.appendChild(extras);
+    }
+
     contentEl.appendChild(wrap);
   });
 

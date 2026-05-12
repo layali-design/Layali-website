@@ -973,6 +973,12 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .menu-item-tag.veg { background: #6b8e4e; }
 .menu-item-tag.spicy { background: #b8552c; }
 .menu-item-tag.new { background: var(--brown-deep); }
+.menu-item-tag.signature {
+  background: transparent;
+  color: var(--bronze);
+  border: 1px solid var(--bronze);
+  padding: 0.14rem 0.46rem;
+}
 .menu-item-desc {
   font-size: 0.88rem;
   color: var(--ink-mute);
@@ -993,6 +999,27 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
   font-weight: 500;
   color: var(--bronze);
   white-space: nowrap;
+}
+.menu-item-sizes {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+
+.menu-cat-extras {
+  max-width: 640px;
+  margin: 2.25rem auto 0;
+  padding: 0.9rem 1.25rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .menu-foot {

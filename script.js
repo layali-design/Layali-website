@@ -45,26 +45,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Reservation form (placeholder handler - connect to email service later)
-function handleReservation(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector("button[type='submit']");
-  const original = btn.textContent;
-  btn.textContent = "Sending...";
-  btn.disabled = true;
-
-  // Simulate request (replace with real endpoint, e.g. Formspree, Netlify Forms)
-  setTimeout(() => {
-    btn.textContent = "Thank you, we'll be in touch";
-    setTimeout(() => {
-      form.reset();
-      btn.textContent = original;
-      btn.disabled = false;
-    }, 2500);
-  }, 800);
-}
-
 // Reveal on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

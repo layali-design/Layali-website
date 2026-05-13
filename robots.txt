@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novacafe.co.ke/sitemap.xml

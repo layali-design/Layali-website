@@ -314,12 +314,15 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 .hero-image {
   position: absolute;
   inset: 0;
-  background-image: url('images/branded cup NOVA.webp');
-  background-size: cover;
-  background-position: center 45%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
   opacity: 0.92;
   animation: heroPan 24s ease-in-out infinite alternate;
   will-change: transform;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes heroPan {
@@ -330,7 +333,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
 /* Keep NOVA cups visible and centered on portrait phones - calmer Ken Burns */
 @media (max-width: 640px) {
   .hero-image {
-    background-position: center 40%;
+    object-position: center 40%;
     animation-duration: 30s;
   }
   @keyframes heroPan {
@@ -1707,7 +1710,7 @@ a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
    ============================================ */
 @media (max-width: 768px) {
   /* Hero - keep NOVA-branded cups & logo centered on portrait phones */
-  .hero-image { background-position: center 40%; }
+  .hero-image { object-position: center 40%; }
 
   /* Story portrait - softer aspect so the brewer/scene isn't clipped wide */
   .story-img-frame { aspect-ratio: 4 / 3; }

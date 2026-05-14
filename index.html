@@ -33,8 +33,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all';this.onload=null" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" /></noscript>
 
-  <!-- Preload hero image so LCP starts fetching alongside CSS, not after it -->
-  <link rel="preload" as="image" href="images/branded%20cup%20NOVA.webp" fetchpriority="high" />
+  <!-- Responsive preload: browser picks the right hero variant before the <img> tag is parsed -->
+  <link rel="preload" as="image"
+    imagesrcset="images/branded%20cup%20NOVA-768.webp 768w, images/branded%20cup%20NOVA-1280.webp 1280w, images/branded%20cup%20NOVA.webp 1536w"
+    imagesizes="100vw"
+    fetchpriority="high" />
 
   <!-- Critical CSS: lets the hero paint without waiting for styles.css / Google Fonts -->
   <style>
@@ -43,9 +46,9 @@
     body{background:#f6efe4;color:#1a1a1a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
     .hero{position:relative;min-height:calc(100vh - 90px);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:4rem clamp(1.25rem,4vw,3rem)}
     .hero-bg{position:absolute;inset:0;background:#1a0f08}
-    .hero-image{position:absolute;inset:0;background-image:url('images/branded%20cup%20NOVA.webp');background-size:cover;background-position:center 45%;opacity:.92;animation:heroPan 24s ease-in-out infinite alternate;will-change:transform}
+    .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;opacity:.92;animation:heroPan 24s ease-in-out infinite alternate;will-change:transform;pointer-events:none;user-select:none}
     @keyframes heroPan{from{transform:scale(1.05) translateX(0)}to{transform:scale(1.12) translateX(-1.5%)}}
-    @media (max-width:640px){.hero-image{background-position:center 40%;animation-duration:30s}@keyframes heroPan{from{transform:scale(1.02) translateX(0)}to{transform:scale(1.06) translateX(-.8%)}}}
+    @media (max-width:640px){.hero-image{object-position:center 40%;animation-duration:30s}@keyframes heroPan{from{transform:scale(1.02) translateX(0)}to{transform:scale(1.06) translateX(-.8%)}}}
     @media (prefers-reduced-motion:reduce){.hero-image{animation:none;transform:none}}
     .hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(26,15,8,.08) 0%,rgba(26,15,8,.48) 55%,rgba(15,8,4,.82) 100%),linear-gradient(180deg,rgba(15,8,4,.52) 0%,rgba(26,15,8,.18) 38%,rgba(26,15,8,.38) 72%,rgba(15,8,4,.75) 100%)}
   </style>
@@ -101,7 +104,14 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-image" aria-hidden="true"></div>
+    <img class="hero-image" alt="" aria-hidden="true"
+         src="images/branded%20cup%20NOVA.webp"
+         srcset="images/branded%20cup%20NOVA-768.webp 768w,
+                 images/branded%20cup%20NOVA-1280.webp 1280w,
+                 images/branded%20cup%20NOVA.webp 1536w"
+         sizes="100vw"
+         width="1536" height="1024"
+         fetchpriority="high" decoding="async" />
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-grain" aria-hidden="true"></div>
 
